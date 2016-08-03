@@ -1,0 +1,32 @@
+while not on_beeper():
+    if not front_is_clear() and not right_is_clear() and left_is_clear():
+        turn_left()
+        move()
+    if front_is_clear() and not right_is_clear() and not left_is_clear():
+        move()
+    if not front_is_clear() and not left_is_clear() and right_is_clear():
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+    if front_is_clear() and left_is_clear() and not right_is_clear():
+        move()
+    if not front_is_clear() and not left_is_clear() and not right_is_clear():
+        turn_left()
+        turn_left()
+        move()
+    if front_is_clear() and right_is_clear() and not left_is_clear():
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+    if front_is_clear() and right_is_clear() and left_is_clear():
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+    if not front_is_clear() and right_is_clear() and left_is_clear():
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
