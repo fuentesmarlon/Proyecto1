@@ -1,0 +1,126 @@
+/*
+  Universidad del Valle de Guatemala
+  Estructura de Datos
+  Joice Miranda 15552	
+  Marlon Fuentes 15xxx
+*/
+
+#include "simpletools.h"                      // Include simpletools header
+#include "abdrive.h"                          // Include abdrive header
+#include "ping.h"                             // Include ping header
+
+int main() {
+	boolean cleanright;
+	boolean cleanleft;
+	boolean cleanfront;
+						
+	void right(){
+		drive_speed(64, -64); 
+		if(ping_cm(8)<=20){
+			drive_ramp(0,0);	
+		}
+	}
+	
+	void left(){
+		drive_speed(-64, 64); 
+	}
+	
+	void front(){
+		drive_ramp(128,128);
+	}
+	
+	
+	//empieza ciclo infinito 
+	while(1){
+		boolean frontclear(){
+			if (ping_cm(8)<=20){
+				cleanfront=False;
+				return cleanfront;
+			}
+			else {
+				cleanfront=True;
+				return cleanfront;
+			}
+		}
+		
+		boolean rightclear(){
+			void right();
+			if (ping_cm(8)<=20){
+				cleanright=False;
+				return cleanright;
+			}
+			else {
+				cleanright=True;
+				return cleanright;
+			}
+		}
+		boolean leftclear(){
+			void left();
+			void left();
+			if (ping_cm(8)<=20){
+				cleanleft=False;
+				return cleanleft;
+			}
+			else {
+				cleanleft=True;
+				return cleanleft;
+			}
+		}
+		
+		void right();
+		drive_ramp(128,128);					// gradua la valocidad 
+		
+		if ((frontclear==False) && (rightclear == False) && (leftclear == True)) {
+			void right();
+			void front();
+		}
+		
+		elseif ((frontclear==True) && (rightclear == False) && (leftclear == False)) {
+			void front();
+		}
+		
+		elseif ((frontclear==False) && (rightclear == True) && (leftclear == False)) {
+			void left();
+			void left();
+			void left();
+			void front();
+		}
+		
+		elseif ((frontclear==True) && (rightclear == False) && (leftclear == True)) {
+			void front();
+		}
+		
+		elseif ((frontclear==False) && (rightclear == False) && (leftclear == False)) {
+			void left();
+			void left();
+			void front();
+		}
+		
+		elseif ((frontclear==True) && (rightclear == True) && (leftclear == False)) {
+			void left();
+			void left();
+			void left();
+			void front();
+		}
+		
+		elseif ((frontclear==True) && (rightclear == True) && (leftclear == True)) {
+			void left();
+			void left();
+			void left();
+			void front();
+		}
+		else{
+			left();
+			left();
+			left();
+			front();
+		}
+
+	}
+	drive_ramp(0,0);	
+}
+
+
+
+
+
